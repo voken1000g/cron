@@ -1,0 +1,11 @@
+{
+  "name": "github-actions-cron-bot",
+  "version": "0.1.0",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "node-telegram-bot-api": "^0.51.0"
+  },
+  "devDependencies": {
+    "https-proxy-agent": "^5.0.0"
+  }
+}
