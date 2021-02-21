@@ -1,4 +1,3 @@
-// require('dotenv').config()
 const fetch = require('node-fetch')
 const Telegram = require('node-telegram-bot-api')
 
@@ -16,7 +15,7 @@ const main = async () => {
 
   const message = '*GitHub Actions*\n\n`From ' + ipData.ip + ' ' + ipData.country + '`'
 
-  await bot.sendMessage(TG_CHAT_ID, message)
+  await bot.sendMessage(TG_CHAT_ID, message, {parse_mode : "MARKDOWN"})
 }
 
 main()
