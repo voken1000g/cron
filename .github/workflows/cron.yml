@@ -22,7 +22,7 @@ jobs:
       - name: install
         run: yarn
 
-      - name: cron
+      - name: node debug.js
         run: node debug.js
         env:
           TG_DEV_BOT_TOKEN: ${{ secrets.TG_DEV_BOT_TOKEN }}
