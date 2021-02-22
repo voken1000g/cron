@@ -1,0 +1,32 @@
+name: Export Deleted
+
+on:
+  push:
+    branches:
+      - master
+#  schedule:
+#    - cron: '0 14 * * *'
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyrogram TgCrypto
+
+      - name: export
+        run: python export_deleted.py
+        env:
+          TG_API_ID: ${{ secrets.TG_API_ID }}
+          TG_API_HASH: ${{ secrets.TG_API_HASH }}
+          PYRO_MONITOR_CHAT_IDS: ${{ secrets.PYRO_MONITOR_CHAT_IDS }}
