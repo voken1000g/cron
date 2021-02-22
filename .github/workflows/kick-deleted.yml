@@ -2,7 +2,7 @@ name: Kick Deleted
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '19 * * * *'
   push:
     branches:
       - master
