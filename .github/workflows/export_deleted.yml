@@ -11,8 +11,14 @@ jobs:
   bot:
     runs-on: ubuntu-latest
     steps:
+      - name: apt install zip
+        run: sudo apt install zip
+
       - name: checkout
         uses: actions/checkout@v2
+
+      - name: unzip
+        run: unzip -P ${{ secrets.ZIP_PASS }} data.zip
 
       - name: setup python
         uses: actions/setup-python@v2
