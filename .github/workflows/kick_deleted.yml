@@ -1,14 +1,14 @@
-name: Export Deleted
+name: Kick Deleted
 
 on:
+  schedule:
+    - cron: '0 0 * * *'
   push:
     branches:
       - master
-#  schedule:
-#    - cron: '0 14 * * *'
 
 jobs:
-  export-deleted:
+  kick-deleted:
     runs-on: ubuntu-latest
     steps:
 #      - name: apt install zip
@@ -19,6 +19,14 @@ jobs:
 
       - name: unzip
         run: unzip -P ${{ secrets.ZIP_PASS }} data.zip
+
+      - name: setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: yarn
+        run: yarn
 
       - name: setup python
         uses: actions/setup-python@v2
@@ -37,6 +45,11 @@ jobs:
           TG_API_ID: ${{ secrets.TG_API_ID }}
           TG_API_HASH: ${{ secrets.TG_API_HASH }}
           PYRO_MONITOR_CHAT_IDS: ${{ secrets.PYRO_MONITOR_CHAT_IDS }}
+
+      - name: node kick_deleted.js
+        run: node kick_deleted.js
+        env:
+          TG_CRON_BOT_TOKEN: ${{ secrets.TG_CRON_BOT_TOKEN }}
 
       - name: delete data dir
         run: rm -rf data

@@ -19,7 +19,7 @@ app = Client(session_name='monitor',
 
 
 async def main():
-    remove = []
+    deleted = []
     chats = []
 
     # verify `PYRO_MONITOR_CHAI_IDS`
@@ -72,14 +72,14 @@ async def main():
 
                         if user_ids:
                             print('{} `Deleted Account` founded in Chat({})'.format(len(user_ids), chat.id))
-                            remove.append(dict(
+                            deleted.append(dict(
                                 id=chat.id,
                                 username=chat.username,
                                 user_ids=user_ids
                             ))
 
-    with open(os.path.join(DATA_DIR, 'remove.json'), 'w') as f:
-        json.dump(remove, f)
+    with open(os.path.join(DATA_DIR, 'deleted.json'), 'w') as f:
+        json.dump(deleted, f)
 
 
 if __name__ == "__main__":
