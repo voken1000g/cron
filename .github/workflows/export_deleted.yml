@@ -8,7 +8,7 @@ on:
 #    - cron: '0 14 * * *'
 
 jobs:
-  bot:
+  export-deleted:
     runs-on: ubuntu-latest
     steps:
       - name: apt install zip
@@ -25,10 +25,11 @@ jobs:
         with:
           python-version: '3.8'
 
-      - name: install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pyrogram TgCrypto
+      - name: install pip
+        run: python -m pip install --upgrade pip
+
+      - name: pip install dependencies
+        run: pip install -r requirements.txt
 
       - name: export
         run: python export_deleted.py
@@ -36,3 +37,6 @@ jobs:
           TG_API_ID: ${{ secrets.TG_API_ID }}
           TG_API_HASH: ${{ secrets.TG_API_HASH }}
           PYRO_MONITOR_CHAT_IDS: ${{ secrets.PYRO_MONITOR_CHAT_IDS }}
+
+      - name: delete data dir
+        run: rm -rf data
