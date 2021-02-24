@@ -2,7 +2,7 @@ name: GitHub Actions Cron Bot
 
 on:
   schedule:
-    - cron: '19 20 * * *'
+    - cron: '9 20 * * *'
 #  push:
 #    branches:
 #      - master
