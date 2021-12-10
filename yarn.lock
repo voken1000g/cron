@@ -402,10 +402,10 @@ node-fetch@^2.6.1:
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
-node-telegram-bot-api@^0.52.0:
-  version "0.52.0"
-  resolved "https://registry.yarnpkg.com/node-telegram-bot-api/-/node-telegram-bot-api-0.52.0.tgz#ebe7947f78545dcd8b0bc162c0ec7b3e839c442a"
-  integrity sha512-HOOHJ14OcuAWcVZQb5kth2lrWJeeOdaO7XFdYXcJT9Dxpznm7iZDHBq9ODLknDTE4dhDMDL6TsjjgYV468gtDQ==
+node-telegram-bot-api@^0.56.0:
+  version "0.56.0"
+  resolved "https://registry.yarnpkg.com/node-telegram-bot-api/-/node-telegram-bot-api-0.56.0.tgz#caf653574ed30530e2855a038b4d806f65c48677"
+  integrity sha512-gKUlH/uUXdSJ++6y1Y16qEThZouecfl4twuPKe6V2BPFDDfom9j2QMlxfslPEjZPH2ZXlA1S/uoRCKtIjzuaLw==
   dependencies:
     array.prototype.findindex "^2.0.2"
     bl "^1.2.3"
