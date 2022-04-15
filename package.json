@@ -6,6 +6,6 @@
     "node-telegram-bot-api": "^0.52.0"
   },
   "devDependencies": {
-    "https-proxy-agent": "^5.0.0"
+    "https-proxy-agent": "^5.0.1"
   }
 }
